@@ -9,8 +9,19 @@
 <body>
 <h1 align="center">Webboard GUBGIB</h1>
     <hr>
-    <div>
-    <center><?php echo "ต้องการกระทู้หมายเลข $_GET[id]"; ?></center>
+    <div align="center">
+    
+    <?php 
+            $x = $_GET["id"];
+            if(($x%2)==0) {
+                echo "ต้องการกระทู้หมายเลข" . $x. "<br>";
+                echo "เป็นกระทู้หมายเลขคู่";    
+            }     
+            else{
+                echo "ต้องการกระทู้หมายเลข" . $x. "<br>";
+                echo "เป็นกระทู้หมายเลขคี่";  
+            }
+    ?>
     </div>
     <br>
    
@@ -20,7 +31,7 @@
         <tr align='center'><td><input type="submit"value="message"></td></tr>
 
     </table>
-    <div align="center"><a href="homework2.html">กลับไปหน้าหลัก</a></div>
+    <div align="center"><a href="index.php">กลับไปหน้าหลัก</a></div>
     
 </body>
 </html>
