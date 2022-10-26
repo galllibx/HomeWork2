@@ -28,7 +28,7 @@
     <h1>Webboard GUBGIB</h1>
     <?php include "nav.php"; ?>
     <br>
-    <div class="d-flex">
+    <div class="d-flex justify-content-between">
         <div>
             <label>หมวดหมู่</label>
             <span class="dropdown">
@@ -42,6 +42,7 @@
                 </ul>
             </span>
         </div>
+        <div><a href="newpost.php" class="btn btn-success btn-sm"><i class="bi bi-plus"></i> สร้างกระทู้ใหม่</a></div>
     </div>
     <br>
     <table class="table table-striped">
@@ -58,10 +59,10 @@
 ?>
     <body>
         <div class="container">
-        <h1>Webboard KakKak</h1>
+        <h1>Webboard GUBGIB</h1>
         <?php include "nav.php"; ?>
         <br>
-        <div class="d-flex">
+    <div class="d-flex justify-content-between">
         <div>
             <label>หมวดหมู่</label>
             <span class="dropdown">
@@ -75,15 +76,20 @@
                 </ul>
             </span>
         </div>
+        <div><a href="newpost.php" class="btn btn-success btn-sm"><i class="bi bi-plus"></i> สร้างกระทู้ใหม่</a></div>
     </div>
+    <br>
         
-        <br>
-        <a href=newpost.php>สร้างกระทู้ใหม่</a>
         <br>
         <table class="table table-striped">
             <?php
                 for($i=1;$i<=10;$i++){
-                    echo "<tr><td><a href=post.php?id=$i style=text-decoration:none>กระทู้ที่ $i </a></td></tr>";
+                    echo "<td><a href=post.php?id=$i style=text-decoration:none>กระทู้ที่ $i </a></td>";
+                    if($_SESSION['role']=='a'){
+                        echo "<td><a href=delete.php?id=$i class='btn btn-danger btn-sm'>
+                        <i class='bi bi-trash'></i></a></td>";
+                    }
+                    echo "</tr>";
                 }
             ?>
         </table>
