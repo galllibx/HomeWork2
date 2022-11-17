@@ -46,8 +46,11 @@ if(isset($_SESSION["id"])){
         include "nav.php";
     ?>
 
-    <form action="verify.php" method="post" >
 
+    
+
+    
+    <form action="verify.php" method="post" >
    <?php
         if(isset($_SESSION["error"]) == "err1"){
    ?>
